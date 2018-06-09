@@ -25,7 +25,7 @@ var app = express();
 app.use(logger("dev"));
 
 //Use body-parser for form submissions
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Use express.static to serve as  a static directory
