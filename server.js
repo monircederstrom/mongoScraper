@@ -43,9 +43,9 @@ app.set("views", path.join(__dirname, '/views'));
 mongoose.Promise = Promise;
 
 //connect to mongoose
-mongoose.connect("mongodb://localhost/mongoScraper").then(
-  () => { console.log("Mongoose is connected")},
-  err => { console.log(err) });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScraper";
+mongoose.connect(MONGODB_URI);
+
 //Routes
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
