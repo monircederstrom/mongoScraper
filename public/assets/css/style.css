@@ -5,13 +5,7 @@ body {
     
     
 }
-.navbar-brand {
-    text-align: right;
-    font-family: 'Jua', sans-serif;
-    font-size: 250%;
-    color: lightgoldenrodyellow;
-    
-}
+
 header {
     text-align: center;
    
@@ -28,4 +22,27 @@ a {
 }
 .btn {
     background-color: violet;
+    border: 1px solid violet;
+}
+.navbar-brand {
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    font-size: 250%;
+    color: lightgoldenrodyellow;
+    
+}
+#saved-link {
+    border: 1px solid #violet;
+    background-color: violet;
+    color: white;
+    border-radius: 2px;
+    font-size: .875rem;
+    margin-right: 1%;
+}
+a:hover { 
+    background-color: lightgoldenrodyellow;
+}
+
+#btn-scraper {
+    border: 1px solid violet;
 }
