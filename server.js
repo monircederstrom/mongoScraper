@@ -29,8 +29,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Use express.static to serve as  a static directory
-app.use(express.static(path.join(__dirname, "/public")));
-
+app.use(express.static(process.cwd() + '/public'));
+app.use(express.static("public"))
 //set views to handlebars
 app.engine("handlebars", exphbs({ 
  // extname: ".handlebars",
@@ -38,7 +38,7 @@ app.engine("handlebars", exphbs({
   //layoutsDir: path.join(__dirname, '/views/layouts')
 }));
 app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, '/views'));
+//app.set("view", path.join(__dirname, '/views'));
 //setting mongoose to use .then promises instead of default callbacks
 mongoose.Promise = Promise;
 
@@ -54,3 +54,4 @@ require("./routes/html-routes.js")(app);
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
+//testing
