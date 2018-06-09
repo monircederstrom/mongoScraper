@@ -16,7 +16,7 @@ var cheerio = require("cheerio");
 var db = require("./models");
 
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -29,16 +29,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Use express.static to serve as  a static directory
-app.use(express.static(process.cwd() + '/public'));
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, "/public")));
 //set views to handlebars
 app.engine("handlebars", exphbs({ 
- // extname: ".handlebars",
+  extname: ".handlebars",
   defaultLayout: "main",
-  //layoutsDir: path.join(__dirname, '/views/layouts')
+  layoutsDir: path.join(__dirname, '/views/layouts')
 }));
-app.set("view engine", "handlebars");
-//app.set("view", path.join(__dirname, '/views'));
+//app.set("views", "handlebars");
+app.set("views", path.join(__dirname, '/views'));
 //setting mongoose to use .then promises instead of default callbacks
 mongoose.Promise = Promise;
 
@@ -54,4 +53,3 @@ require("./routes/html-routes.js")(app);
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
-//testing
