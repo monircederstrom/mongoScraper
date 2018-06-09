@@ -31,13 +31,14 @@ app.use(bodyParser.json());
 //Use express.static to serve as  a static directory
 app.use(express.static(path.join(__dirname, "/public")));
 //set views to handlebars
-app.engine("handlebars", exphbs({ 
-  extname: ".handlebars",
-  defaultLayout: "main",
+app.engine('handlebars', exphbs({
+  extname: '.handlebars',
+  defaultLayout: 'main',
   layoutsDir: path.join(__dirname, '/views/layouts')
 }));
-//app.set("views", "handlebars");
-app.set("views", path.join(__dirname, '/views'));
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, '/views'));
+
 //setting mongoose to use .then promises instead of default callbacks
 mongoose.Promise = Promise;
 
