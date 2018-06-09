@@ -1,6 +1,7 @@
 # mongoScraper
 
 mongoScraper
+This app is hosted by herloku at  https://stormy-beach-56163.herokuapp.com/
 
 This app uses Mongoose and Cheerio to scrape and display news from https://www.theonion.com. Once the news is scraped the user can select articles to save.  When the user views their saved articles they can add notes or delete the saved articles.
 
