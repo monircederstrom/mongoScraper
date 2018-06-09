@@ -25,17 +25,17 @@ var app = express();
 app.use(logger("dev"));
 
 //Use body-parser for form submissions
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Use express.static to serve as  a static directory
-app.use(express.static(path.join(__dirname, "/views")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 //set views to handlebars
 app.engine("handlebars", exphbs({ 
-  extname: ".handlebars",
+ // extname: ".handlebars",
   defaultLayout: "main",
-  layoutsDir: path.join(__dirname, '/views/layouts')
+  //layoutsDir: path.join(__dirname, '/views/layouts')
 }));
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, '/views'));
