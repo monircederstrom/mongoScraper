@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Use express.static to serve as  a static directory
-//app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/views")));
 
 //set views to handlebars
 app.engine("handlebars", exphbs({ 
